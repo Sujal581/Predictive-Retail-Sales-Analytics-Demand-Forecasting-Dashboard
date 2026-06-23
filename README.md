@@ -2,11 +2,11 @@
 
 ## 🚀 Project Overview
 
-**Predictive Retail Sales Analytics & Demand Forecasting Dashboard** is an end-to-end retail analytics project built using **Python, Machine Learning, Time Series Forecasting, and Streamlit**.
+**Predictive Retail Sales Analytics & Demand Forecasting Dashboard** is an end-to-end retail analytics project built using **Python, Time Series Forecasting, and Streamlit**.
 
 The project analyzes retail transaction data to understand sales trends, product performance, customer behavior, inventory efficiency, and promotion impact.
 
-It also predicts future demand using forecasting models to help businesses improve inventory planning, revenue strategy, and decision-making.
+It also predicts future demand to help businesses improve inventory planning, revenue strategy, and decision-making.
 
 ---
 
