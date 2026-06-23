@@ -59,20 +59,6 @@ This project provides data-driven insights and predictive solutions for better b
 
 - Streamlit
 
-## Machine Learning
-
-- Scikit-Learn
-
-## Forecasting Models
-
-- Prophet
-- ARIMA
-- Random Forest Regressor
-
-## Model Saving
-
-- Joblib
-
 ---
 
 # 📂 Project Structure
