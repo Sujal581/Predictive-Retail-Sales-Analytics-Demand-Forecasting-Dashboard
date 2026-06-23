@@ -81,25 +81,16 @@ This project provides data-driven insights and predictive solutions for better b
 Predictive-Retail-Sales-Analytics-Demand-Forecasting-Dashboard
 
 │
-├── app.py
+├── Overview.py
 ├── utils.py
 ├── requirements.txt
 ├── README.md
+
 │
 ├── data/
 │   └── retail_sales.csv
 │
-├── models/
-│   ├── prophet_model.pkl
-│   ├── arima_model.pkl
-│   └── random_forest_model.pkl
-│
-├── assets/
-│   ├── logo.png
-│   └── banner.png
-│
 └── pages/
-    ├── 1_Sales_Overview.py
     ├── 2_Product_Analysis.py
     ├── 3_Customer_Analytics.py
     ├── 4_Inventory_Analytics.py
@@ -234,27 +225,6 @@ Used for:
 
 ---
 
-## Random Forest Regressor
-
-Used for demand prediction using:
-
-Features:
-
-- Promotion Applied
-- Holiday Indicator
-- Inventory Level
-- Weather Conditions
-- Weekday
-- Customer Attributes
-
-Target:
-
-```
-Actual Demand
-```
-
----
-
 # 📊 Model Evaluation
 
 Models are evaluated using:
@@ -270,46 +240,6 @@ Measures forecasting accuracy and penalizes large errors.
 ## MAPE
 
 Measures percentage forecasting accuracy.
-
----
-
-# 🔄 Machine Learning Workflow
-
-```
-Data Collection
-
-        ↓
-
-Data Cleaning
-
-        ↓
-
-Exploratory Data Analysis
-
-        ↓
-
-Feature Engineering
-
-        ↓
-
-Model Training
-
-        ↓
-
-Model Evaluation
-
-        ↓
-
-Demand Forecasting
-
-        ↓
-
-Streamlit Dashboard
-
-        ↓
-
-Business Recommendations
-```
 
 ---
 
