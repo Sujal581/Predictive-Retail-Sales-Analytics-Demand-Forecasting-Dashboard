@@ -272,13 +272,7 @@ This project can be used in:
 ✔ Data Cleaning  
 ✔ Exploratory Data Analysis  
 ✔ KPI Development  
-✔ Business Insights  
-
-## Machine Learning
-
-✔ Regression  
-✔ Feature Engineering  
-✔ Model Evaluation  
+✔ Business Insights   
 
 ## Forecasting
 
