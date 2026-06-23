@@ -60,7 +60,7 @@ kpi_card(c2,"⚠️ Stockouts",f"{total_stockouts:,}",color="orange")
 kpi_card(c3,"🔄 Average Reorder Qty",f"{avg_reorder:,}",color="cyan")
 kpi_card(c4,"🚚 Lead Time",f"{avg_lead_time} Days",color="yellow")
 
-c1, c2, c3 = st.columns(3)
+c1, c2 = st.columns(2)
 with c1:
     section_header("📈 Inventory Trend")
     chart_label("📌 Average inventory levels over time.")
@@ -80,6 +80,7 @@ with c2:
     st.plotly_chart(fig,use_container_width=True)
     chart_note("💡 Frequent stockouts may result in lost sales and reduced customer satisfaction. Improving replenishment planning can mitigate these risks.")
 
+c3, c4 =st.columns(2)
 with c3:
     section_header("⚠️ Top 10 Products with Highest Stockouts")
     chart_label("📌 Top 10 products experiencing the highest number of stockout events.")
@@ -92,21 +93,21 @@ with c3:
 # ==========================
 # REORDER ANALYSIS
 # ==========================
-
-section_header("🔄 Reorder Analysis")
-chart_label("📌 Average reorder quantity across product categories.")
-reorder_data = df.groupby("category").agg(Avg_Reorder=("reorder_quantity","mean"),Avg_Inventory=("inventory_level","mean")).reset_index()
-fig = px.bar(reorder_data,x="category",y="Avg_Reorder",color="category")
-apply_plot_layout(fig)
-st.plotly_chart(fig,use_container_width=True)
-chart_note("💡 Categories with higher reorder quantities may require closer monitoring to maintain optimal inventory levels.")
+with c4:
+    section_header("🔄 Reorder Analysis")
+    chart_label("📌 Average reorder quantity across product categories.")
+    reorder_data = df.groupby("category").agg(Avg_Reorder=("reorder_quantity","mean"),Avg_Inventory=("inventory_level","mean")).reset_index()
+    fig = px.bar(reorder_data,x="category",y="Avg_Reorder",color="category")
+    apply_plot_layout(fig)
+    st.plotly_chart(fig,use_container_width=True)
+    chart_note("💡 Categories with higher reorder quantities may require closer monitoring to maintain optimal inventory levels.")
 
 # ==========================
 # DEMAND VS INVENTORY
 # ==========================
 
-c4, c5 = st.columns(2)
-with c4:
+c5, c6 = st.columns(2)
+with c5:
     section_header("🔥 Demand vs Inventory")
     chart_label("📌 Relationship between average inventory levels and customer demand.")
     demand_inventory = df.groupby("product_name").agg(Inventory=("inventory_level","mean"),Demand=("actual_demand","mean")).reset_index()
@@ -119,7 +120,7 @@ with c4:
 # FORECAST VS ACTUAL DEMAND
 # ==========================
 
-with c5:
+with c6:
     section_header("📈 Foreast vs Actual Demand")
     chart_label("📌 Comparison between forecasted demand and actual customer demand.")
     forecast_df = df.groupby("transaction_date").agg(Forecasted_Demand=("forecasted_demand","sum"),Actual_Demand=("actual_demand","sum")).reset_index()
